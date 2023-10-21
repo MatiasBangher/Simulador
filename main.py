@@ -113,7 +113,11 @@ class memoria:
                 aux = self.controlMultiprogramacion.pop(0)                                  #Sacamos el primer proceso de la cola de control de multiprogramacion
                 self.controlMultiprogramacion.sort(key=lambda x: x.ti, reverse=False)       #Ordenamos la cola de control de multiprogramacion por tiempo de irrupcion
                 self.controlMultiprogramacion.insert(0,aux)"""                                 #Insertamos el proceso que sacamos al principio de la cola
-
+    def roundRobin(self):
+        if len(self.controlMultiprogramacion)>0:
+            if self.procesador.proceso == None:
+                
+        pass
 #hay que hacer el RoundRobin
     def getParticion(self, proceso):
         for i in range(len(self.memoria)):
@@ -127,6 +131,7 @@ class memoria:
                 self.controlMultiprogramacion.append(self.colaNuevos.pop(0))
                 self.listoProcesoB = True
         self.ordenSJF()
+    
     def estadoMemoria(self):
         i=0
         for i in range(len(self.memoria)):
